@@ -1,11 +1,10 @@
 # Twambit is a NO-AI Social Media powered by WebRTC , React and Node
 
-The idea is to check every piece of content and identify if its AI created content or not.  The reason is humans will still want to connect with humans on the internet and Twambit enforces, governs and creates new technologies to monitor AI.
-
-One of the main features is video , audio and text chat.  Nothing gets saved and no AI involved in the chat.  Again, Humans, people, mankind still will want a convenient, creative and safeway to communicate on the internet and social media and not have to worry
-if its a robot or not. The world changed in cyber space and will continue. People will not be abel to tell if its a bot or not.  Less people will interact through social media on a personal level.  They will still be in awe but won't trust it more and more.
-We will eventually want the "basics".  I just want to talk to a human not a robot.  Twambit was created to help humans not robots, you are welcome and I appreciate your support. If you like to be apart of this wonderful futuristic journey. email Mikey at
-"twambittech@gmail.com". All first seed, investors, entrepreneurs human beings , God Bless You 
+"Twambit: Reclaiming Authentic Human Connection in a Digital World.
+As AI content proliferates, the fundamental human need for genuine connection remains stronger than ever. Twambit is the revolutionary platform designed to ensure authenticity online, leveraging advanced technologies to meticulously identify AI-generated content. We provide the tools and governance to help you distinguish human creativity from artificial output, fostering a more trustworthy digital environment.
+At the heart of Twambit is our commitment to pure human interaction. Experience secure and private video, audio, and text chat where every conversation is exclusively human-to-human – no AI involvement, no saved data. We're building the safe, convenient, and creative space you need to truly connect, without the ever-growing worry of interacting with a bot.
+The cyber world is changing rapidly, and distinguishing human from machine is becoming increasingly challenging. Twambit is your answer, offering peace of mind and the assurance of real human engagement. Join us in shaping a future where human connection thrives.
+We're seeking visionary first seed investors and entrepreneurs who share our belief in empowering humanity. To learn more and join this pivotal journey, please email Mikey at twambittech@gmail.com. God Bless You."
 
 ## Project Structure
 
