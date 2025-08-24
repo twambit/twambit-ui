@@ -1,6 +1,11 @@
-# WebRTC Video Chat Application
+# Twambit is a NO-AI Social Media powered by WebRTC , React and Node
 
-This project is a simple WebRTC-based peer-to-peer video chat application built with React for the client-side and Node.js for the server-side. It allows users to connect and communicate via video in real-time.
+The idea is to check every piece of content and identify if its AI created content or not.  The reason is humans will still want to connect with humans on the internet and Twambit enforces, governs and creates new technologies to monitor AI.
+
+One of the main features is video , audio and text chat.  Nothing gets saved and no AI involved in the chat.  Again, Humans, people, mankind still will want a convenient, creative and safeway to communicate on the internet and social media and not have to worry
+if its a robot or not. The world changed in cyber space and will continue. People will not be abel to tell if its a bot or not.  Less people will interact through social media on a personal level.  They will still be in awe but won't trust it more and more.
+We will eventually want the "basics".  I just want to talk to a human not a robot.  Twambit was created to help humans not robots, you are welcome and I appreciate your support. If you like to be apart of this wonderful futuristic journey. email Mikey at
+"twambittech@gmail.com". All first seed, investors, entrepreneurs human beings , God Bless You 
 
 ## Project Structure
 
