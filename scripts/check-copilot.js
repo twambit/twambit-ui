@@ -1,26 +1,37 @@
-#!/usr/bin/env node
-const fs = require("fs");
+// scripts/check-copilot.js
+const { execSync } = require("child_process");
 const path = require("path");
 
-console.log("🔍 Checking for Copilot dependency...");
+try {
+  console.log("🔍 Checking Copilot Prompts repo...");
 
-// adjust this path if your package.json is inside client/
-const packageJsonPath = path.resolve(__dirname, "..", "package.json");
+  // Path where you expect the repo to be cloned
+  const repoPath = path.resolve(__dirname, "../../copilot-prompts");
 
-if (!fs.existsSync(packageJsonPath)) {
-  console.error("❌ package.json not found. Are you running this in the right place?");
-  process.exit(1);
-}
+  // Run git command inside copilot-prompts
+  const result = execSync("git rev-parse --is-inside-work-tree", {
+    cwd: repoPath,
+    stdio: "pipe"
+  }).toString().trim();
 
-const pkg = require(packageJsonPath);
+  if (result !== "true") {
+    console.error("❌ Copilot Prompts repo not found.");
+    process.exit(1);
+  }
 
-if (
-  (pkg.dependencies && pkg.dependencies["@github/copilot"]) ||
-  (pkg.devDependencies && pkg.devDependencies["@github/copilot"])
-) {
-  console.log("✅ Copilot dependency found. Safe to push.");
+  // Check if it's up to date
+  execSync("git fetch", { cwd: repoPath, stdio: "inherit" });
+  const status = execSync("git status -uno", { cwd: repoPath, stdio: "pipe" }).toString();
+
+  if (status.includes("behind")) {
+    console.error("❌ Copilot Prompts is not up to date. Please run `git pull` in copilot-prompts.");
+    process.exit(1);
+  }
+
+  console.log("✅ Copilot Prompts repo found and up to date.");
   process.exit(0);
-} else {
-  console.error("❌ Copilot dependency not installed! Run: npm install @github/copilot --save-dev");
+
+} catch (err) {
+  console.error("❌ Copilot Prompts repo missing or invalid. Clone it before pushing.");
   process.exit(1);
 }
