@@ -1,6 +1,7 @@
 # Twambit is a NO-AI Social Media powered by WebRTC , React and Node
 
 "Twambit: Reclaiming Authentic Human Connection in a Digital World.
+
 As AI content proliferates, the fundamental human need for genuine connection remains stronger than ever. Twambit is the revolutionary platform designed to ensure authenticity online, leveraging advanced technologies to meticulously identify AI-generated content. We provide the tools and governance to help you distinguish human creativity from artificial output, fostering a more trustworthy digital environment.
 At the heart of Twambit is our commitment to pure human interaction. Experience secure and private video, audio, and text chat where every conversation is exclusively human-to-human – no AI involvement, no saved data. We're building the safe, convenient, and creative space you need to truly connect, without the ever-growing worry of interacting with a bot.
 The cyber world is changing rapidly, and distinguishing human from machine is becoming increasingly challenging. Twambit is your answer, offering peace of mind and the assurance of real human engagement. Join us in shaping a future where human connection thrives.
