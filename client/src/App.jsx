@@ -1,11 +1,13 @@
-import React from 'react';
-import VideoChat from './components/VideoChat';
+// import VideoChat from './components/VideoChat';
+import ChatSummary from './components/ChatSummary';
+import ItemManager from './components/ItemManager';
 
 const App = () => {
   return (
     <div>
-      <h1>WebRTC Video Chat</h1>
-      <VideoChat />
+      <h1>Twambit H2H Communicate</h1>
+      <ChatSummary />
+      <ItemManager />
     </div>
   );
 };

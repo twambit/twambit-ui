@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: 210 90% 40%;
+  --color-secondary: 240 6% 90%;
+}
+
+@utility primary-border {
+  border-width: 1px;
+  border-color: var(--color-primary);
+}
+
+/* Override the dark variant to use a `.dark` class */
+@custom-variant dark (&:where(.dark, .dark *));
