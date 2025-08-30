@@ -5,8 +5,11 @@ export const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
 
   return (
-    <nav>
-      <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
+  <nav className="site-navbar">
+  
+      {isAuthenticated ? (
+        <>
+            <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
         Home
       </NavLink>
          <NavLink to="/promptmanager" className={({ isActive }) => isActive ? "active" : ""}>
@@ -15,8 +18,6 @@ export const Navbar = () => {
          <NavLink to="/chatSummary" className={({ isActive }) => isActive ? "active" : ""}>
        Chat Summary
       </NavLink>
-      {isAuthenticated ? (
-        <>
           <NavLink to="/dashboard" className={({ isActive }) => isActive ? "active" : ""}>
             Dashboard
           </NavLink>

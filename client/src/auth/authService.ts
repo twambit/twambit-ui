@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { type MyUser } from '../types/auth';
 
-const API_URL = 'http://localhost:3001/api/auth/';
+const API_URL = 'http://localhost:3001/api/';
 
 // Retrieve token from storage (e.g., localStorage or cookies)
 const getToken = () => localStorage.getItem('user');
@@ -17,10 +17,10 @@ const removeToken = () => {
 };
 
 // Login function
-const login = async (credentials: Pick<MyUser, 'username' | 'password'>): Promise<MyUser> => {
+const login = async (credentials: Pick<MyUser, 'username' | 'password'>) => {
 //const login = async (userData) => {
   try {
-    const response = await axios.post<MyUser>(API_URL + 'login', credentials);
+    const response = await axios.post(API_URL + 'login', credentials);
     if (response.data.token) {
       setToken(response.data);
     }

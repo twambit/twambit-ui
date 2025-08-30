@@ -1,9 +1,11 @@
 // server.js
-import express from "express";
+import express, { type Request, type Response,type  NextFunction } from 'express';
 import cors from "cors"; // Import the cors middleware
 import fetch from "node-fetch";
+import 'dotenv/config';
+import jwt from 'jsonwebtoken';
+//import jwt from './middleware/auth.middleware.js';
 
-import jwt from './middleware/auth.middleware.js';
 // Import modular routers
 import usersRouter from './routes/user.routes.js';
 import orderRoutes from './routes/order.routes.js';
@@ -39,7 +41,7 @@ app.use('/api/users', usersRouter);
 // });
 
 // --- Public route for user login ---
-app.post('/login', (req, res) => {
+app.post('/api/login',  (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   // In a real app, you would validate credentials against a database
