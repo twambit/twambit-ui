@@ -1,7 +1,11 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from "path";
+import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const config = {
   entry: "./src/index.js", 
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -22,11 +26,16 @@ module.exports = {
           "css-loader",
           "postcss-loader",
         ],
+      },
+      {
+        test: /\.(ts|tsx)$/, // This regex tests for files with .ts or .tsx extensions
+        use: 'ts-loader', // Use the ts-loader for matching files
+        exclude: /node_modules/, // Exclude files in the node_modules folder
       }
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".tsx", ".ts"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -44,4 +53,9 @@ module.exports = {
     },
   },
   mode: "development",
+
+   // Optional: Add a devtool for source maps to aid in debugging
+  devtool: 'inline-source-map',
 };
+
+export default config;

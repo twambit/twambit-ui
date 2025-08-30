@@ -1,14 +1,19 @@
 // import VideoChat from './components/VideoChat';
-import ChatSummary from './components/ChatSummary';
-import ItemManager from './components/ItemManager';
+import { AuthProvider } from './auth/AuthProvider';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import {Navbar} from './components/Navbar';
 
+import { AppRoutes } from './routes/routes';
 const App = () => {
   return (
-    <div>
+      <AuthProvider>
+     <Header /> 
+      <Navbar />
       <h1>Twambit H2H Communicate</h1>
-      <ChatSummary />
-      <ItemManager />
-    </div>
+        <AppRoutes />
+        <Footer />
+     </AuthProvider>
   );
 };
 

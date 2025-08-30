@@ -11,6 +11,14 @@ import orderRoutes from './routes/order.routes.js';
 const app = express();
 // Use the built-in middleware to parse JSON bodies
 app.use(express.json());
+
+const corsOptions = {
+  origin: 'http://localhost:3000', // Only allow requests from this origin
+  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+};
+
+//app.use(cors(corsOptions)); // Enable CORS with specific options
+
 app.use(cors()); // Enable CORS for all routes
 
 const PORT: number = process.env.MAIN_SERVER_GATEWAY_PORT ? parseInt(process.env.MAIN_SERVER_GATEWAY_PORT) : 3001;
