@@ -1,4 +1,3 @@
-// import VideoChat from './components/VideoChat';
 import {useLocation } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthProvider';
 import Header from './components/Header';

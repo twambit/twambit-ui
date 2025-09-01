@@ -36,7 +36,8 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '400px', margin: 'auto' }}>
+ <div className="flex items-center justify-center h-screen bg-gray-100">
+  <div className="border border-gray-300 p-4 rounded-md max-w-sm mx-auto">
       <h1>Login</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div style={{ marginBottom: '1rem' }}>
@@ -44,6 +45,7 @@ const LoginPage: React.FC = () => {
           <input
             id="username"
             type="text"
+             className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             // Register the input with React Hook Form
             {...register('username', { required: 'Username is required' })}
             disabled={isSubmitting}
@@ -57,6 +59,7 @@ const LoginPage: React.FC = () => {
           <input
             id="password"
             type="password"
+              className="border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             // Register the input with React Hook Form
             {...register('password', { required: 'Password is required' })}
             disabled={isSubmitting}
@@ -66,11 +69,14 @@ const LoginPage: React.FC = () => {
           )}
         </div>
         {apiError && <p style={{ color: 'red' }}>{apiError}</p>}
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" 
+         className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md transition-colors hover:bg-blue-600"
+        disabled={isSubmitting}>
           {isSubmitting ? 'Logging in...' : 'Log In'}
         </button>
       </form>
     </div>
+  </div>
   );
 };
 

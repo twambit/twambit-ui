@@ -5,6 +5,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 import LoginPage from '../auth/LoginPage';
 import PromptManager from '../components/PromptManager';
 import ChatSummary from '../components/ChatSummary';
+import VideoChat from '../components/VideoChat';
 //import ProfilePage from '../features/user/components/Profile';
 
 export const AppRoutes = () => {
@@ -19,8 +20,7 @@ export const AppRoutes = () => {
       <Route element={<ProtectedRoute />}>
        <Route path="/promptmanager" element={<PromptManager />} />
     <Route path="/chatSummary" element={<ChatSummary />} />
-        {/* <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/profile" element={<ProfilePage />} /> */}
+        <Route path="/chat" element={<VideoChat />} />
       </Route>
       
       {/* Fallback route for 404 */}

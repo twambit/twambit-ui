@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from 'react';
 import useWebRTC from '../hooks/useWebRTC';
 
 const VideoChat = () => {
-    const { localStream, remoteStream, startCall, endCall } = useWebRTC();
-    const localVideoRef = useRef(null);
-    const remoteVideoRef = useRef(null);
+    const { localStream, remoteStream, startCall, endCall } = useWebRTC(0);
+    const localVideoRef = useRef<any>(null);
+    const remoteVideoRef = useRef<any>(null);
 
     useEffect(() => {
         if (localVideoRef.current && localStream) {
