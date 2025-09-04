@@ -1,6 +1,7 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "esModuleInterop": true,
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
@@ -9,7 +10,10 @@
     // See also https://aka.ms/tsconfig/module
     "module": "preserve",
     "target": "esnext",
-    "types": [],
+    "types": [
+      "jest",
+      "node" // Recommended to also include node types
+    ],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -44,7 +48,7 @@
   },
   "include": [
     "src/**/*"                              // Include all files inside the 'src' folder.
-  ],
+, "tests/App.test.jsx"  ],
   "exclude": [
     "node_modules"                          // Exclude the 'node_modules' directory.
   ]

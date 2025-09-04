@@ -23,7 +23,7 @@ function Header() {
   return (
     <header className="site-header">
       <div className="logo">
-        <h1>My App</h1>
+        <h1>Twambit - Safe way to chat with humans, no AI </h1>
       </div>
       <Navbar />
     </header>

@@ -1,4 +1,4 @@
-import {useLocation } from 'react-router-dom';
+import {BrowserRouter, useLocation } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthProvider';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -19,10 +19,12 @@ function AppContent() {
 
 const App = () => {
   return (
+    <BrowserRouter>
       <AuthProvider>
-  <AppContent />
-        <Footer />
-     </AuthProvider>
+        <AppContent />
+        <Footer />    
+      </AuthProvider>
+    </BrowserRouter>
   );
 };
 

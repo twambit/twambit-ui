@@ -1,29 +1,8 @@
 # WebRTC Video Chat Application
 
-This project is a simple WebRTC-based peer-to-peer video chat application built with React for the client-side and Node.js for the server-side. It allows users to connect and communicate via video in real-time.
+This project is a simple peer-to-peer video chat application built using React for the client-side and Node.js for the server-side. It utilizes WebRTC technology to enable real-time video communication between users.
 
-## Project Structure
-
-```
-twambit
-├── client
-│   ├── src
-│   │   ├── App.jsx
-│   │   ├── components
-│   │   │   └── VideoChat.jsx
-│   │   └── hooks
-│   │       └── useWebRTC.js
-│   ├── package.json
-│   └── README.md
-├── server
-│   ├── src
-│   │   └── index.js
-│   ├── package.json
-│   └── README.md
-└── README.md
-```
-
-## Getting Started
+## Client Setup
 
 ### Prerequisites
 
@@ -32,66 +11,79 @@ twambit
 
 ### Installation
 
-1. Clone the repository:
+1. Navigate to the client directory:
 
-   ```
-   git clone <repository-url>
-   cd webrtc-video-chat
+   ```bash
+   cd webrtc-video-chat/client
    ```
 
-2. Navigate to the client directory and install dependencies:
+2. Install the dependencies:
 
-   ```
-   cd client
+   ```bash
    npm install
    ```
 
-3. Navigate to the server directory and install dependencies:
+### Running the Client
 
+To start the client application, run:
+
+```bash
+npm start
+```
+
+This will start the React application and open it in your default web browser.
+
+## Usage
+
+Once the client is running, you can initiate a video chat by following these steps:
+
+1. Open the application in multiple browser tabs or windows.
+2. Use the provided interface to connect with another peer.
+3. Allow camera and microphone access when prompted.
+
+## Server Setup
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm (Node package manager)
+
+### Installation
+
+1. Navigate to the server directory:
+
+   ```bash
+   cd webrtc-video-chat/server
    ```
-   cd ../server
+
+2. Install the dependencies:
+
+   ```bash
    npm install
    ```
 
-### Running the Application
+### Running the Server
 
-1. Start the server:
+To start the server, run:
 
-   ```
-   cd server
-   npm start
-   ```
+```bash
+npm start
+```
 
-2. In a new terminal, start the client:
+This will start the Node.js server, which handles signaling for WebRTC connections.
 
-   ```
-   cd client
-   npm start
-   ```
+## Project Structure
 
-3. Open your browser and navigate to `http://localhost:3000` to access the video chat application.
+- **client/src/App.jsx**: Main component that integrates the video chat interface.
+- **client/src/components/VideoChat.jsx**: Handles the video chat UI and logic.
+- **client/src/hooks/useWebRTC.js**: Custom hook for managing WebRTC connections.
+- **server/src/index.js**: Entry point for the Node.js server handling signaling.
+- **README.md**: Documentation for both client and server setups.
 
-### Usage
+## Contributing
 
-- Once the application is running, you can initiate a video chat by connecting with another user. 
-- Ensure that both users are on the same network or have the necessary permissions to connect over the internet.
+Feel free to fork the repository and submit pull requests for any improvements or features you would like to add.
 
-### Features
+## License
 
-- Peer-to-peer video chat
-- Real-time communication
-- Simple and intuitive interface
-
-### Contributing
-
-Contributions are secured through vigurous code reviews! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-## Patented Utility
-PATENT NO: 8,514,097 "Sound Activated AI", www.uspto.gov.  
-Interested entrepreneurs and engineers please email "twambittech@gmail.com"
-# twambit-ui
-react typesript tailwind front end
+This project is licensed under the MIT License.

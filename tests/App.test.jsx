@@ -1,11 +1,10 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import App from '../src/App';
 
 describe('App', () => {
-  test('renders WebRTC Video Chat heading', () => {
+  test('renders heading', () => {
     render(<App />);
-    const heading = screen.getByText(/WebRTC Video Chat/i);
+    const heading = screen.getByText(/Twambit - Safe way to chat with humans, no AI/i);
     expect(heading).toBeInTheDocument();
   });
 
