@@ -40,46 +40,29 @@ twambit
 1. Clone the repository:
 
    ```
-   git clone <repository-url>
-   cd webrtc-video-chat
-   ```
+   ### make a directory on your local machine and cloned UI and API projects below
 
-2. Navigate to the client directory and install dependencies:
+   mkdir twambit-api
+   mkdir twambit-ui
+   cd twambit-ui
+   git clone https://github.com/twambit/twambit-ui.git
+   npm i
+   npm start
 
-   ```
-   cd client
-   npm install
-   ```
-
-3. Navigate to the server directory and install dependencies:
-
-   ```
-   cd ../server
-   npm install
+  ## open another bash instance
+      cd twambit-api
+   git clone https://github.com/twambit/twambit-api.git
+   npm i
+   npm start
    ```
 
 ### Running the Application
 
-1. Start the server:
-
-   ```
-   cd server
-   npm start
-   ```
-
-2. In a new terminal, start the client:
-
-   ```
-   cd client
-   npm start
-   ```
-
-3. Open your browser and navigate to `http://localhost:3000` to access the video chat application.
+3. Open your browser and navigate to `http://localhost:3000` to access the application.
 
 ### Usage
 
-- Once the application is running, you can initiate a video chat by connecting with another user. 
-- Ensure that both users are on the same network or have the necessary permissions to connect over the internet.
+- Once the application is running, you can click the heart favorite and sort
 
 ### Features
 
