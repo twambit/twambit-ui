@@ -13,18 +13,18 @@ export const AppRoutes = () => {
     <Routes>
       {/* Public Routes */}
       {/* <Route path="/" element={<HomePage />} /> */}
-      <Route path="/login" element={<LoginPage />} />
- 
+      {/* <Route path="/login" element={<LoginPage />} /> */}
+  <Route path="/chatSummary" element={<ChatSummary />} />
   
       {/* Protected Routes */}
       <Route element={<ProtectedRoute />}>
        <Route path="/promptmanager" element={<PromptManager />} />
-    <Route path="/chatSummary" element={<ChatSummary />} />
+   
         <Route path="/chat" element={<VideoChat />} />
       </Route>
       
       {/* Fallback route for 404 */}
-      <Route path="*" element={<div>404: Not Found</div>} />
+      {/* <Route path="*" element={<div>404: Not Found</div>} /> */}
     </Routes>
   );
 };

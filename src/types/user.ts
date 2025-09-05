@@ -1,7 +1,8 @@
 export interface MyUser {
-  id: string;
+  id: number;
   username: string;
   role?: 'user' | 'admin';
+  isFavorite: boolean;
 }
 
 // Define the shape of your context's state and actions

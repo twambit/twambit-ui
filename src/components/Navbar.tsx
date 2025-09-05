@@ -8,7 +8,7 @@ export const Navbar = () => {
     <nav className="bg-gray-800 text-white">
   <div className="container mx-auto px-4 md:flex items-center gap-6">
     <div className="flex items-center justify-between md:w-auto w-full">
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
         <>
             <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
         Home
@@ -28,7 +28,7 @@ export const Navbar = () => {
         <NavLink to="/login" className={({ isActive }) => isActive ? "active" : ""}>
           Login
         </NavLink>
-      )}
+      )} */}
       </div>
       </div>
     </nav>

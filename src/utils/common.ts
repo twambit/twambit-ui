@@ -1,5 +1,5 @@
 import { type PromptData } from '../types/prompt';
-import { type MyUser } from '../types/auth';
+import { type MyUser } from '../types/user';
 
 type ResponseType = PromptData | MyUser;
 

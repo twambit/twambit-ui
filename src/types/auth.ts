@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface MyUser {
   id: number;
+  isFavorite: boolean;
   email: string;
   phone: string;
   name: string;

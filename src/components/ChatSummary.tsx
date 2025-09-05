@@ -2,6 +2,7 @@
     import axios from 'axios';
 import { sortItems } from "../utils/common";
 import { type MyUser } from '../types/auth';
+import fakeUsers from '../data/fakeData';
 
     function ChatSummary() {
       const [items, setItems] = useState<any[]>([]);
@@ -15,9 +16,10 @@ import { type MyUser } from '../types/auth';
         setError(null);
         try {
           // Replace with your API endpoint and pagination parameters
-        const response = await axios.get(`http://localhost:3001/api/users`);
+          setItems(u => [...u, ...fakeUsers]);
+       // const response = await axios.get(`http://localhost:3001/api/users`);
             // const response = await axios.get(`https://jsonplaceholder.typicode.com/users`);
-          setItems(response.data); // Assuming response.data is an array of items
+         // setItems(response.data); // Assuming response.data is an array of items
         } catch (err) {
           setError('Failed to fetch items.');
           console.error(err);
@@ -32,12 +34,25 @@ import { type MyUser } from '../types/auth';
       }, [page]); // Dependency array ensures refetch when page changes
 
       // Handle "Next" button click
-      const handleNextPage = () => {
-        setPage(prevPage => prevPage + 1);
-      };
-
+     const addUser = () => {
+ //   if (!name || !priority) return;
+    const newItem = {
+      id: items.length + 1,
+      name:"new user",
+      favorite: false
+    };
+    setItems([...items, newItem]);
+    //setName("");
+   // setPriority(0);
+  };
+  const handleFavChange = (id: number) => {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, isFavorite: !item.isFavorite } : item 
+      )
+    );
+  };
           const sortItem = () => {
-           // const isOn = (sortDirection === 'asc') ? 'decs' :'asc' ;
           setSortDirection((sd) => (sd === 'asc') ? 'decs' :'asc' );
         };
 
@@ -49,18 +64,51 @@ import { type MyUser } from '../types/auth';
 
       return (
         <div>
-          <h1>Chat Summary</h1>
-        <ul className="list-disc pl-9">
-            {sortedItems.map(item => (
-              <li className="text-red-500 bg-blue-500 hover:bg-white-500" key={item.id}>{item.username}</li> // Replace with your item structure
-            ))}
-          </ul>
-          <button onClick={handleNextPage}>Next Page</button>
-                 <button
-          onClick={sortItem}
-          className="bg-blue-500 text-white px-3 py-1 rounded"
+          <h1>User List</h1>
+
+              <div className="max-w-md mx-auto p-4 rounded-lg shadow-lg bg-white dark:bg-gray-900">
+      <table className="min-w-full text-left table-fixed">
+        <thead className="border-b-2 border-gray-300 dark:border-gray-700">
+          <tr>
+            <th className="w-1/2 py-2 text-sm font-bold text-gray-500 dark:text-gray-400">
+              Name
+            </th>
+            <th className="w-1/2 py-2 text-sm font-bold text-gray-500 dark:text-gray-400">
+          Favorite
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedItems.map((item, index) => (
+            <tr
+              key={index}
+              className={`border-b border-gray-200 dark:border-gray-800 transition-colors duration-200 ${
+                index % 2 === 0 ? 'bg-gray-50 dark:bg-gray-800' : 'bg-white dark:bg-gray-900'
+              }`}
+            >
+              <td className="w-1/2 py-2 px-4 text-sm text-gray-900 dark:text-white">
+                {item.username}
+              </td>
+              <td className="w-1/2 py-2 px-4 text-sm text-gray-900 dark:text-white">
+                 <button  style={{ cursor: "pointer" }} onClick={() => handleFavChange(item.id)}>
+                  {item.isFavorite ? '❤️' : '♡'}
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+         <button 
+         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+         onClick={addUser}>
+          Add User
+          </button>    
+          <button
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded"
+              onClick={sortItem}
         >
-          Sort Toggle
+          A-Z
         </button>
         </div>
       );
